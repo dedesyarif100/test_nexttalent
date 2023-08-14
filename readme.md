@@ -12,4 +12,3 @@ Cara Running Rest API :
 6. Import Collection Postman
 7. Jalankan Rest API
 8. Port pada project, berjalan pada port 9999
-
