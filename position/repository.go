@@ -1,15 +1,14 @@
 package position
 
 import (
+	"errors"
+
 	"gorm.io/gorm"
 )
 
 type Repository interface {
 	FindAll() ([]Position, error)
 	FindById(ID int) (*Position, error)
-	// Create(employmentType EmploymentType) (EmploymentType, error)
-	// Update(employmentType EmploymentType) (EmploymentType, error)
-	// Delete(employmentType EmploymentType) (EmploymentType, error)
 }
 
 type repository struct {
@@ -23,26 +22,18 @@ func NewRepository(db *gorm.DB) *repository {
 func (r *repository) FindAll() ([]Position, error) {
 	var position []Position
 	err := r.db.Find(&position).Error
+	if err != nil {
+		return nil, err
+	}
 	return position, err
 }
 
 func (r *repository) FindById(ID int) (*Position, error) {
 	var position Position
 	err := r.db.Find(&position, ID).Error
-	return &position, err
+	if position.ID == 0 {
+		err = errors.New("data not found")
+		return nil, err
+	}
+	return &position, nil
 }
-
-// func (r *repository) Create(book EmploymentType) (EmploymentType, error) {
-// 	err := r.db.Create(&book).Error
-// 	return book, err
-// }
-
-// func (r *repository) Update(book EmploymentType) (EmploymentType, error) {
-// 	err := r.db.Save(&book).Error
-// 	return book, err
-// }
-
-// func (r *repository) Delete(book EmploymentType) (EmploymentType, error) {
-// 	err := r.db.Delete(&book).Error
-// 	return book, err
-// }

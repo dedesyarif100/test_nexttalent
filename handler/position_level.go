@@ -20,7 +20,8 @@ func (handler *positionLevelHandler) GetPositionLevel(c *gin.Context) {
 	positionLevels, err := handler.positionLevelService.FindAll()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}
@@ -46,7 +47,8 @@ func (handler *positionLevelHandler) GetDetailPositionLevel(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}

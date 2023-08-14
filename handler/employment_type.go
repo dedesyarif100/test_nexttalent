@@ -20,7 +20,8 @@ func (handler *employmentTypeHandler) GetEmploymentTypes(c *gin.Context) {
 	employmentTypes, err := handler.employmentTypeService.FindAll()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}
@@ -46,7 +47,8 @@ func (handler *employmentTypeHandler) GetDetailEmploymentType(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}

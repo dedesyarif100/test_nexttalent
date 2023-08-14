@@ -20,7 +20,8 @@ func (handler *positionHandler) GetPositions(c *gin.Context) {
 	positions, err := handler.positionService.FindAll()
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}
@@ -46,7 +47,8 @@ func (handler *positionHandler) GetDetailPosition(c *gin.Context) {
 
 	if err != nil {
 		c.JSON(http.StatusBadRequest, gin.H{
-			"errors": err,
+			"code":   http.StatusBadRequest,
+			"errors": err.Error(),
 		})
 		return
 	}
