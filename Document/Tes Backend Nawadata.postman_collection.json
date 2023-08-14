@@ -1,0 +1,148 @@
+{
+	"info": {
+		"_postman_id": "fbc2a036-a745-4a4c-b78c-eda09a3f3915",
+		"name": "Tes Backend Nawadata",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "12201949"
+	},
+	"item": [
+		{
+			"name": "Employment Type",
+			"item": [
+				{
+					"name": "Get Employment Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/employment-types",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"employment-types"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Employee Type",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/employment-type/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"employment-type",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Position Level",
+			"item": [
+				{
+					"name": "Get Position Level",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/position-levels",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"position-levels"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Position Level",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/position-level/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"position-level",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Position",
+			"item": [
+				{
+					"name": "Get Position",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/positions",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"positions"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Detail Position",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:9999/v3/position/1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "9999",
+							"path": [
+								"v3",
+								"position",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
