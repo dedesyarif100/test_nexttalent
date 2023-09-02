@@ -45,7 +45,6 @@ func (handler *countryHandler) GetCurrentTime(c *gin.Context) {
 		return
 	}
 
-	// response := convertToCountryResponse(country)
 	c.JSON(http.StatusOK, gin.H{
 		"code":     http.StatusOK,
 		"response": "success get data",

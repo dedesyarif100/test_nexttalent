@@ -2,6 +2,7 @@ package country
 
 import (
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io/ioutil"
 	"log"
@@ -31,7 +32,6 @@ func (s *service) FindByName(name string) (*Country, error) {
 
 func (s *service) FindTimezone(timezone string) (*Timezone, error) {
 	result, err := GetTimezone(timezone)
-	fmt.Println("err : ", err)
 	if err != nil {
 		return nil, err
 	}
@@ -39,7 +39,6 @@ func (s *service) FindTimezone(timezone string) (*Timezone, error) {
 }
 
 func GetTimezone(timezone string) (*Timezone, error) {
-	fmt.Println("ZONE : ", timezone)
 	req, err := http.NewRequest("GET", fmt.Sprintf("https://timeapi.io/api/Time/current/zone?timeZone=%s", timezone), nil)
 	client := &http.Client{}
 	res, err := client.Do(req)
@@ -59,7 +58,7 @@ func GetTimezone(timezone string) (*Timezone, error) {
 	err = json.Unmarshal([]byte(data), &result)
 	if err != nil {
 		fmt.Println(err)
-		return nil, err
+		return nil, errors.New("timezone not valid")
 	}
 
 	return &result, nil
