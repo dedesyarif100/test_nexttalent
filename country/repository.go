@@ -8,7 +8,7 @@ import (
 )
 
 type Repository interface {
-	FindById(name string) (*Country, error)
+	FindByName(name string) (*Country, error)
 }
 
 type repository struct {
@@ -19,7 +19,7 @@ func NewRepository(db *gorm.DB) *repository {
 	return &repository{db}
 }
 
-func (r *repository) FindById(name string) (*Country, error) {
+func (r *repository) FindByName(name string) (*Country, error) {
 	var country Country
 	err := r.db.Find(&country, "name", name).Error
 	fmt.Println("ERR : ", err)

@@ -25,5 +25,6 @@ func main() {
 
 	router := gin.Default()
 	router.GET("/GetCountry/:name", countryHandler.GetDetailCountry)
+	router.GET("/GetCurrentTime", countryHandler.GetCurrentTime)
 	router.Run(":8080")
 }
