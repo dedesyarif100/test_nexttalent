@@ -14,3 +14,4 @@ Cara Running Rest API :
 8. Port pada project, berjalan pada port 8080
 9. Contoh hit Rest API :
     http://localhost:8080/GetCountry/dede
+    http://localhost:8080/GetCurrentTime/?timezone=Asia/Jakarta
