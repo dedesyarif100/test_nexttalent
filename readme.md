@@ -7,8 +7,8 @@ Cara Running Rest API :
     3. Password : root
     4. Port : 43306
 
-4. Import database nawadata.sql
+4. Import database nexttalent_test.sql
 5. Buka Project Rest API, running go run main.go
 6. Import Collection Postman
 7. Jalankan Rest API
-8. Port pada project, berjalan pada port 9999
+8. Port pada project, berjalan pada port 8080
