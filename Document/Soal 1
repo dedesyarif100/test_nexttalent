@@ -1,0 +1,21 @@
+1. Create table script :
+	CREATE TABLE countries (
+		id INT NOT NULL AUTO_INCREMENT,
+		name varchar(255),
+		country varchar(255),
+		PRIMARY KEY(id)
+	)
+
+2. Insert data script :
+	INSERT INTO countries(id, NAME, country) VALUES(1, "dede", "indo")
+
+3. Select / Stored procedure script :
+	delimiter $$
+	CREATE PROCEDURE country()
+	begin
+		SELECT * FROM countries;
+	end $$
+	delimiter ;
+
+	call country()
+
