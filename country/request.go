@@ -1,4 +1,4 @@
-package position
+package country
 
 type PositionRequest struct {
 	ID   int
